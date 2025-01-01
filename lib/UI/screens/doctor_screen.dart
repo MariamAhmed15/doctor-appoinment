@@ -24,6 +24,11 @@ TextEditingController searchController= TextEditingController();
               final doctors = state.doctors;
 
               return SingleChildScrollView(
+
+
+
+
+
                 child: Column(
                   children: [
                     const SizedBox(height: 30),

@@ -8,6 +8,7 @@ import '../../logic/states/doctor_states.dart';
 
 class doctorScreen extends StatelessWidget {
    doctorScreen({super.key});
+
 TextEditingController searchController= TextEditingController();
   @override
   Widget build(BuildContext context) {

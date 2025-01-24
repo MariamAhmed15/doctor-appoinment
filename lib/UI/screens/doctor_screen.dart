@@ -58,7 +58,12 @@ TextEditingController searchController= TextEditingController();
                           ),
                           const Spacer(),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context, MaterialPageRoute(
+                                  builder:(context)=>homeScreen()
+                              ),
+                              );
+                            },
                             icon: const Icon(Icons.more_horiz),
                           ),
                         ],

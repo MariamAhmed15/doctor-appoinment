@@ -1,3 +1,4 @@
+import 'package:doctor_appointment/UI/screens/home_screen.dart';
 import 'package:doctor_appointment/core/colorsManager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text('Login successful!')),
             );
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> doctorScreen()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> homeScreen()));
 
           } else if (state is LoginErrorState) {
             ScaffoldMessenger.of(context).showSnackBar(

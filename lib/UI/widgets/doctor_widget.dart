@@ -13,27 +13,6 @@ class doctorWidget extends StatelessWidget {
         children: [
           Column(
             children: [
-    Image.network(
-      doctor.photo,
-      height: 100,
-      width: 100,
-      loadingBuilder: (context, child, loadingProgress) {
-        if (loadingProgress == null) {
-          return child; // If image is loaded
-        }
-        return Center(
-          child: CircularProgressIndicator(
-            value: loadingProgress.expectedTotalBytes != null
-                ? loadingProgress.cumulativeBytesLoaded /
-                (loadingProgress.expectedTotalBytes ?? 1)
-                : null,
-          ),
-        );
-      },
-      errorBuilder: (context, error, stackTrace) {
-        return Center(child: Icon(Icons.error)); // Show error icon if loading fails
-      },
-    ),
             ],
           ),
           Column(

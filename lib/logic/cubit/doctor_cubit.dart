@@ -11,8 +11,9 @@ class doctorCubit extends Cubit <doctorStates> {
   doctorCubit(this.dio) :super(doctorInitialState());
   Future<void> getAllDoc([String doctorName = '']) async {
     emit(doctorLoadingState());
+    print("1");
     try {
-
+print("2");
       final url = doctorName.isEmpty
           ? EndPoints.getDoctorsUrl
           : '${EndPoints.baseUrl}/doctor/doctor-search?name=$doctorName';
@@ -21,20 +22,23 @@ class doctorCubit extends Cubit <doctorStates> {
         url,
         options: Options(
           headers: {
-            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzM1NTg4NjY3LCJleHAiOjE3MzU2NzUwNjcsIm5iZiI6MTczNTU4ODY2NywianRpIjoiMVl0QmRhcWlqUXBJbVhZeiIsInN1YiI6IjI4MCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.0OWsPZcveMVi06OPfm_53DRVgtTvNcLWllpdD16pApA',
+            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzM3NzE4NDAxLCJleHAiOjE3Mzc4MDQ4MDEsIm5iZiI6MTczNzcxODQwMSwianRpIjoiMGRidG1YRXlueGJHNjVHRCIsInN1YiI6IjI4MCIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.QrMWc_8BADf9LJk9CL6Tnx0TVkTUHdcbIddjB_oBX-8',
             'Content-Type': 'application/json',
           },
         ),
       );
-
+print ("3");
       if (response.statusCode == 200) {
+        print("4");
         final List x = response.data['data'];
         final doctors = x.map((json) => Doctor.fromJson(json)).toList();
         emit(doctorSuccessState(doctors));
       } else {
         emit(doctorErrorState("Unexpected error: ${response.statusCode}"));
       }
+      print("5");
     } catch (e) {
+      print("6");
       emit(doctorErrorState(e.toString()));
     }
   }

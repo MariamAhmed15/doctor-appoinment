@@ -81,7 +81,7 @@ class homeScreen extends StatelessWidget {
                             children: [
                               Column(
                                 children: [
-                                  Text("Hi, Omar!",
+                                  Text("Hi, Mariam!",
                                     style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w700,
@@ -111,13 +111,6 @@ class homeScreen extends StatelessWidget {
                                 fontSize: 18,
                               ),),
                             Spacer(),
-                            TextButton(
-                                onPressed: () {},
-                                child: Text("See all",
-                                  style: TextStyle(
-                                    color: ColorsManager.primaryColor,
-                                    fontSize: 12,
-                                  ),)),
                           ],
                         ),
                         specialityWidget(),
@@ -157,7 +150,7 @@ class homeScreen extends StatelessWidget {
                                   final doctors = state
                                       .doctors; // Get doctors from the state
                                   return ListView.builder(
-                                    itemCount: doctors.length,
+                                    itemCount: 10,
                                     // Use the length of the doctor list
                                     itemBuilder: (context, index) {
                                       final doctor = doctors[index]; // Get each doctor from the list

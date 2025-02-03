@@ -44,7 +44,13 @@ TextEditingController searchController= TextEditingController();
                               ),
                             ),
                             child: IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pop(
+                                    context, MaterialPageRoute(
+                                    builder: (context) => homeScreen(),
+                                ),
+                                );
+                              },
                               icon: const Icon(Icons.arrow_back_ios, size: 18),
                             ),
                           ),
